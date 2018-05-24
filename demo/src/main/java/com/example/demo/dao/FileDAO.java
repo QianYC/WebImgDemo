@@ -13,7 +13,7 @@ public class FileDAO {
 
 	public void saveFile(MultipartFile img,String imgId){
 		System.out.println("invoke fileDAO");
-		String base=System.getProperty("user.dir").replaceAll("\\\\", "/")+imgId+".jpg";
+		String base=System.getProperty("user.dir").replaceAll("\\\\", "/")+"/"+imgId+".jpg";
 		System.out.println(base);
 		File f=new File(base);
 		try {
@@ -22,6 +22,12 @@ public class FileDAO {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
+		
+	}
+	
+	public byte[] readFile(){
+		String path=System.getProperty("user.dir").replaceAll("\\\\", "/")+"/hehe.jpg";
+		return null;
 		
 	}
 }

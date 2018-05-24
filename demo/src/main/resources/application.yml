@@ -15,8 +15,19 @@ spring:
           enabled: true
           paths: /**
           
+  datasource:
+    url: jdbc:mysql://localhost:3306/db?characterEncoding=UTF-8&serverTimezone=UTC&useSSL=false
+    username: root
+    password: 31415926
+    driver-class-name: com.mysql.jdbc.Driver
           
   servlet:
     multipart:
-      max-file-size: 1000000000
-      max-request-size: 1000000000
+      max-file-size: 10240MB
+      max-request-size: 10240MB
+      
+
+mybatis:
+  type-aliases-package: com.example.demo.model
+  mapper-locations:
+  - classpath:mapper/*.xml
